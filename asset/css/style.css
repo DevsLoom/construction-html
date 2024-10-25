@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", serif;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.8) url(../image/bg.webp) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+}
+
+.logo img {
+    max-height: 35px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.coming-soon {
+    font-family: "Playwrite GB S", serif;
+    font-weight: 100;
+    color: white;
+    margin-top: 10vh;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+.coming-soon p {
+    font-family: "Montserrat", serif;
+}
+
+.socials {
+    margin-top: 45px;
+}
+
+.socials ul {
+    list-style-type: none;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+}
+
+.socials li a {
+    height: 50px;
+    width: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: white;
+    transition: 0.5s ease;
+    font-size: 26px;
+}
+
+.socials li a:hover {
+    background: rgba(0, 0, 0, 1);
+    opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+    .coming-soon {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .coming-soon {
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .coming-soon {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1023px) {
+    .coming-soon {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
