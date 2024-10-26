@@ -4,23 +4,200 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Under construction</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
         rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/clock.css">
-    <script src="asset/js/clock.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/3.1.1/iconify.min.js"
-        integrity="sha512-oQ1yQwSEIc9CTcK7pffEyS8fxom2iUWQrALk3j3+wfdSDjQ77EZbzGMGe2ZYmfoC8M9vR47apbS1ZYbW05y/pg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Iconify Script -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+
+    <style>
+        /* Global Style */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", serif;
+            background: rgba(0, 0, 0, 0.8) url(asset/bg.webp) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-blend-mode: multiply;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+            min-height: calc(100vh - 53px);
+        }
+
+        .logo img {
+            max-height: 35px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .coming-soon {
+            font-family: "Playwrite GB S", serif;
+            font-weight: 100;
+            color: white;
+            margin-top: 10vh;
+            padding: 25px;
+            margin-bottom: 50px;
+        }
+
+        .coming-soon p {
+            font-family: "Montserrat", serif;
+            font-weight: 400;
+            color: #f5f5f5;
+            opacity: 0.7;
+        }
+
+        .socials {
+            margin-top: 45px;
+        }
+
+        .socials ul {
+            list-style-type: none;
+            margin-top: 45px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .socials li a {
+            height: 50px;
+            width: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            color: white;
+            transition: 0.5s ease;
+            font-size: 26px;
+        }
+
+        .socials li a:hover {
+            background: rgba(0, 0, 0, 1);
+            opacity: 0.5;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            color: aliceblue;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .copyright span {
+            color: tomato;
+        }
+
+        .copyright a {
+            color: teal;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon {
+                margin-top: 40px;
+                margin-bottom: 20px;
+                padding: 5px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 767px) {
+            .coming-soon {
+                margin-top: 10px;
+                margin-bottom: 0;
+                padding: 5px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 990px) {
+            .coming-soon {
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: 991px) and (max-width: 1023px) {
+            .coming-soon {
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+        }
+
+        /* Clock Style */
+        .clock-card {
+            position: relative;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            font-family: Montserrat;
+            padding: 15px;
+            color: white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .clock-card .label {
+            font-family: "Playwrite GB S", serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: aliceblue;
+            opacity: 0.8;
+        }
+
+        .clock-card .digit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            font-size: 45px;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+            gap: 18px;
+        }
+
+        .clock-card .digit span {
+            display: inline-block;
+            width: 22px;
+            text-align: center;
+        }
+
+        .clock-card .animate {
+            animation: slide 0.5s ease-in-out forwards;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,7 +206,7 @@
             <div class="col-12 col-md-8 col-lg-10 col-xxl-6">
                 <!-- Logo -->
                 <div class="logo">
-                    <img class="img-fluid " src="asset/image/logo.png" alt="Company Name" title="Company Name">
+                    <img class="img-fluid " src="asset/logo.png" alt="Company Name" title="Company Name">
                 </div>
 
                 <!-- Heading -->
@@ -44,31 +221,32 @@
                 <div class="row g-0 g-lg-5">
                     <div class="col-6 col-lg-3">
                         <div class="clock-card">
-                            <p class="digit" id="days">0</p>
+                            <p class="digit" id="days"><span class="digit1">0</span><span class="digit2">0</span>
+                            </p>
                             <hr>
                             <span class="label">Days</span>
                         </div>
                     </div>
-
                     <div class="col-6 col-lg-3">
                         <div class="clock-card">
-                            <p class="digit" id="hours">0</p>
+                            <p class="digit" id="hours"><span class="digit1">0</span><span class="digit2">0</span>
+                            </p>
                             <hr>
                             <span class="label">Hours</span>
                         </div>
                     </div>
-
                     <div class="col-6 col-lg-3">
                         <div class="clock-card">
-                            <p class="digit" id="minutes">0</p>
+                            <p class="digit" id="minutes"><span class="digit1">0</span><span class="digit2">0</span>
+                            </p>
                             <hr>
                             <span class="label">Minutes</span>
                         </div>
                     </div>
-
                     <div class="col-6 col-lg-3">
                         <div class="clock-card">
-                            <p class="digit" id="seconds">0</p>
+                            <p class="digit" id="seconds"><span class="digit1">0</span><span class="digit2">0</span>
+                            </p>
                             <hr>
                             <span class="label">Seconds</span>
                         </div>
@@ -93,13 +271,64 @@
                                 <iconify-icon icon="simple-icons:instagram" width="24" height="24"></iconify-icon>
                             </a>
                         </li>
+                        <li>
+                            <a href="" title="instagram" target="_blank">
+                                <iconify-icon icon="uil:youtube" width="24" height="24"></iconify-icon>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    <!-- Copyright -->
+    <footer class="copyright">
+        <p class="mb-0">&copy; All rights reserved. Developed by <span>&#10084;</span> <a href=""
+                target="_blank"><strong>DevsLoom</strong></a></p>
+    </footer>
+
+    <script>
+        const countdownDate = new Date("December 31, 2024 22:30:00").getTime();
+        let previousValues = { days: null, hours: null, minutes: null, seconds: null };
+
+        const countdownFunction = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            updateClock("days", days, previousValues.days);
+            updateClock("hours", hours, previousValues.hours);
+            updateClock("minutes", minutes, previousValues.minutes);
+            updateClock("seconds", seconds, previousValues.seconds);
+
+            previousValues = { days, hours, minutes, seconds };
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".row").innerHTML = "<h1>Countdown Finished!</h1>";
+            }
+        };
+        const updateClock = (id, newValue, oldValue) => {
+            const newDigits = String(newValue).padStart(2, "0").split("");
+            const oldDigits = oldValue !== null ? String(oldValue).padStart(2, "0").split("") : ["", ""];
+
+            newDigits.forEach((digit, index) => {
+                if (digit !== oldDigits[index]) {
+                    const digitElement = document.getElementById(id).querySelector(`.digit${index + 1}`);
+                    digitElement.classList.remove("animate");
+                    void digitElement.offsetWidth;
+                    digitElement.innerText = digit;
+                    digitElement.classList.add("animate");
+                }
+            });
+        }
+        const x = setInterval(countdownFunction, 1000);
+    </script>
 </body>
 
 </html>
