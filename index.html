@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap"
         rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -106,13 +106,15 @@
             font-size: 14px;
         }
 
-        .copyright span {
-            color: tomato;
+        .copyright a {
+            color: #9127FD;
+            text-decoration: none;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: bold;
         }
 
-        .copyright a {
-            color: teal;
-            text-decoration: none;
+        .copyright img {
+            max-height: 20px;
         }
 
         @media (max-width: 480px) {
@@ -284,8 +286,9 @@
 
     <!-- Copyright -->
     <footer class="copyright">
-        <p class="mb-0">&copy; All rights reserved. Developed by <span>&#10084;</span> <a href=""
-                target="_blank"><strong>DevsLoom</strong></a></p>
+        <p class="mb-0">&copy; All rights reserved. Developed by <img src="asset/company_logo.png" alt="company_logo">
+            <a href="" target="_blank"><strong>devsloom</strong></a>
+        </p>
     </footer>
 
     <script>
