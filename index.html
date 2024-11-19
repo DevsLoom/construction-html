@@ -19,6 +19,7 @@
 
     <!-- Iconify Script -->
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.1.0/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon"></script>
 
     <style>
         /* Global Style */
@@ -286,18 +287,22 @@
 
     <!-- Copyright -->
     <footer class="copyright">
-        <p class="mb-0">&copy; All rights reserved. Developed by
+        <p class="mb-0">&copy; <span id="year"></span> All rights reserved.
             <a href="https://www.devsloom.ca" target="_blank"><strong>devsloom</strong></a>
         </p>
     </footer>
 
     <script>
-        const countdownDate = new Date("December 31, 2024 22:30:00").getTime();
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+
+        const countdownDate = new Date("November 19, 2024 18:00:00 UTC").getTime();
         let previousValues = { days: null, hours: null, minutes: null, seconds: null };
 
         const countdownFunction = () => {
             const now = new Date().getTime();
-            const distance = countdownDate - now;
+            const timezoneOffset = new Date().getTimezoneOffset() * 60 * 1000;
+            const localNow = now - timezoneOffset;
+            const distance = countdownDate - localNow;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
